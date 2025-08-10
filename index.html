@@ -3,7 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shekhinah - Puffs e Sofás Baús Retráteis</title>
+    <title>Shekhinah - Sofás, Puffs e Baús Retráteis | Móveis Sob Encomenda</title>
+    <meta name="description" content="Shekhinah - Fábrica especializada em sofás retráteis, puffs e baús decorativos. Móveis sob encomenda com qualidade garantida. 10+ anos de experiência, 500+ clientes satisfeitos.">
+    <meta name="keywords" content="sofás retráteis, puffs, baús decorativos, móveis sob encomenda, estofados, móveis funcionais, decoração, conforto">
+    <meta name="author" content="Shekhinah Estofados">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shekest2025.github.io/sofaspuffs.github.io/">
+    <meta property="og:title" content="Shekhinah Estofados - Sofás e Poltronas de Qualidade">
+    <meta property="og:description" content="Sofás retráteis, reclináveis e poltronas com qualidade superior. Conforto e elegância para sua casa. Contato: shekest2025@gmail.com">
+    <meta property="og:image" content="https://shekest2025.github.io/sofaspuffs.github.io/imagem/IMG-20250810-WA0001.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shekest2025.github.io/sofaspuffs.github.io/">
+    <meta property="twitter:title" content="Shekhinah - Sofás, Puffs e Baús Retráteis">
+    <meta property="twitter:description" content="Móveis funcionais e elegantes. Sofás retráteis, puffs e baús sob encomenda.">
+    <meta property="twitter:image" content="https://shekest2025.github.io/sofaspuffs.github.io/imagem/puff.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -201,8 +223,8 @@
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h3>Email</h3>
-                            <p>contato@shekhinah.com.br</p>
+                            <h3>Email Comercial</h3>
+                            <p>shekest2025@gmail.com</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -213,12 +235,21 @@
                         </div>
                     </div>
                 </div>
-                <form class="contato-form">
-                    <input type="text" placeholder="Seu Nome" required>
-                    <input type="email" placeholder="Seu Email" required>
-                    <input type="tel" placeholder="Seu Telefone">
-                    <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                <form class="contato-form" id="contatoForm">
+                    <input type="text" id="nome" placeholder="Seu Nome" required>
+                    <input type="email" id="email" placeholder="Seu Email" required>
+                    <input type="tel" id="telefone" placeholder="Seu Telefone" required>
+                    <select id="produto" required>
+                        <option value="">Produto de Interesse</option>
+                        <option value="sofa-retratil">Sofá Retrátil</option>
+                        <option value="puff-bau">Puff Baú</option>
+                        <option value="bau-decorativo">Baú Decorativo</option>
+                        <option value="sob-encomenda">Sob Encomenda</option>
+                        <option value="orcamento">Orçamento Geral</option>
+                    </select>
+                    <textarea id="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
                     <button type="submit">Enviar Mensagem</button>
+                    <div id="form-status" class="form-status"></div>
                 </form>
             </div>
         </div>
@@ -260,7 +291,7 @@
                     <ul>
                         <li><i class="fas fa-phone"></i> (19) 99722-1950</li>
                         <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5519997221950" target="_blank">WhatsApp</a></li>
-                        <li><i class="fas fa-envelope"></i> contato@shekhinah.com.br</li>
+                        <li><i class="fas fa-envelope"></i> shekest2025@gmail.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> Centro - CEP: 13490-021</li>
                     </ul>
                 </div>
@@ -271,6 +302,51 @@
         </div>
     </footer>
 
+    <!-- Chatbot Automático -->
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header" id="chatbot-header">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info">
+                <h4>Assistente Shekhinah</h4>
+                <span class="status online">Online</span>
+            </div>
+            <button class="chatbot-close" id="chatbot-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-body" id="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Olá! 👋 Sou o assistente virtual da Shekhinah. Como posso ajudá-lo hoje?
+                    </div>
+                    <div class="message-time">Agora</div>
+                </div>
+            </div>
+            <div class="chatbot-quick-replies" id="quick-replies">
+                <button class="quick-reply" data-message="Quero ver os produtos">🛋️ Ver Produtos</button>
+                <button class="quick-reply" data-message="Preciso de um orçamento">💰 Orçamento</button>
+                <button class="quick-reply" data-message="Quais são os prazos de entrega?">⏰ Prazos</button>
+                <button class="quick-reply" data-message="Falar com atendente">👤 Atendente</button>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Digite sua mensagem...">
+            <button id="chatbot-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Botão do Chatbot -->
+    <div class="chatbot-toggle" id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+        <span class="notification-badge" id="notification-badge">1</span>
+    </div>
+
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 </html>
