@@ -296,7 +296,7 @@ class ShekhinahChatbot {
         if (form) {
             form.addEventListener('submit', () => {
                 // Notificar no chatbot antes do envio
-                this.addMessage('Obrigado pelo seu contato! Seu formulário está sendo enviado... 📧', 'bot');
+                this.addBotMessage('Obrigado pelo seu contato! Seu formulário está sendo enviado... 📧');
             });
         }
     }
