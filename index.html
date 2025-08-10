@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://shekest2025.github.io/sofaspuffs.github.io/">
     <meta property="og:title" content="Shekhinah Estofados - Sofás e Poltronas de Qualidade">
     <meta property="og:description" content="Sofás retráteis, reclináveis e poltronas com qualidade superior. Conforto e elegância para sua casa. Contato: shekest2025@gmail.com">
-    <meta property="og:image" content="https://shekest2025.github.io/sofaspuffs.github.io/imagem/IMG-20250810-WA0001.jpg">
+    <meta property="og:image" content="https://shekest2025.github.io/sofaspuffs.github.io/imagem/Loja.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -83,7 +83,7 @@
             <div class="produtos-grid">
                 <div class="produto-item">
                     <div class="produto-image">
-                        <img src="imagem/IMG-20250810-WA0001.jpg" alt="Sofá Retrátil Premium">
+                        <img src="imagem/Loja.png" alt="Sofá Retrátil Premium">
                     </div>
                     <h3>Sofá Retrátil Premium</h3>
                     <p>Sofá de alta qualidade com mecanismo retrátil suave e design moderno. Perfeito para salas de estar e home theaters.</p>
@@ -187,9 +187,9 @@
                     <div class="galeria-produtos">
                         <h3>Nossa Galeria</h3>
                         <div class="galeria-grid">
-                            <img src="imagem/IMG-20250810-WA0003.jpg" alt="Produto Shekhinah">
+                            <img src="imagem/IMG-20250810-WA0002.jpg" alt="Produto Shekhinah">
                             <img src="imagem/IMG-20250810-WA0004.jpg" alt="Produto Shekhinah">
-                            <img src="imagem/IMG-20250810-WA0005.jpg" alt="Produto Shekhinah">
+                            <img src="imagem/Sem grade.png" alt="Produto Shekhinah">
                         </div>
                     </div>
                 </div>
@@ -235,11 +235,11 @@
                         </div>
                     </div>
                 </div>
-                <form class="contato-form" id="contatoForm">
-                    <input type="text" id="nome" placeholder="Seu Nome" required>
-                    <input type="email" id="email" placeholder="Seu Email" required>
-                    <input type="tel" id="telefone" placeholder="Seu Telefone" required>
-                    <select id="produto" required>
+                <form class="contato-form" id="contatoForm" action="https://formsubmit.co/shekest2025@gmail.com" method="POST">
+                    <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" id="email" name="email" placeholder="Seu Email" required>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Seu Telefone" required>
+                    <select id="produto" name="produto" required>
                         <option value="">Produto de Interesse</option>
                         <option value="sofa-retratil">Sofá Retrátil</option>
                         <option value="puff-bau">Puff Baú</option>
@@ -247,9 +247,12 @@
                         <option value="sob-encomenda">Sob Encomenda</option>
                         <option value="orcamento">Orçamento Geral</option>
                     </select>
-                    <textarea id="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
+                    <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
+                    <input type="hidden" name="_next" value="https://shekest2025.github.io/sofaspuffs.github.io/index.html#contato">
+                    <input type="hidden" name="_subject" value="Novo contato - Shekhinah Estofados">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div id="form-status"></div>
                     <button type="submit">Enviar Mensagem</button>
-                    <div id="form-status" class="form-status"></div>
                 </form>
             </div>
         </div>

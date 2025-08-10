@@ -289,38 +289,16 @@ class ShekhinahChatbot {
         }
     }
 
-    // Funcionalidade do formulário melhorado
     setupFormHandler() {
-        const form = document.getElementById('contato-form');
-        if (!form) return;
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.handleFormSubmit();
-        });
-    }
-
-    handleFormSubmit() {
-        const form = document.getElementById('contato-form');
-        const statusDiv = document.getElementById('form-status');
-        
-        if (!form || !statusDiv) return;
-
-        // Simular envio do formulário
-        statusDiv.className = 'form-status';
-        statusDiv.textContent = 'Enviando mensagem...';
-        statusDiv.style.display = 'block';
-
-        setTimeout(() => {
-            statusDiv.className = 'form-status success';
-            statusDiv.textContent = '✅ Mensagem enviada com sucesso! Entraremos em contato em breve.';
-            
-            // Limpar formulário
-            form.reset();
-            
-            // Mostrar notificação no chatbot
-            this.showNotification();
-        }, 2000);
+        // FormSubmit agora gerencia o envio do formulário diretamente
+        // Apenas adicionamos uma notificação quando o formulário for enviado
+        const form = document.getElementById('contatoForm');
+        if (form) {
+            form.addEventListener('submit', () => {
+                // Notificar no chatbot antes do envio
+                this.addMessage('Obrigado pelo seu contato! Seu formulário está sendo enviado... 📧', 'bot');
+            });
+        }
     }
 
     showNotification() {
